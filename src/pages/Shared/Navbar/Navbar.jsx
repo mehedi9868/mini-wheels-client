@@ -11,7 +11,7 @@ const Navbar = () => {
             <div className="flex flex-wrap items-center justify-between mx-auto p-8">
                 <Link to="/" className="flex items-center">
                     <img src={logo} className="h-10 mr-3" alt="Logo" />
-                    <h2 className='text-blue-200 text-3xl font-bold'>Mini Wheeles</h2>
+                    <h2 className='text-red-500 text-3xl font-bold' style={{ fontFamily: 'Kalam, cursive' }}>Mini Wheeles</h2>
                 </Link>
                 <div className="flex items-center md:order-2">
                     {

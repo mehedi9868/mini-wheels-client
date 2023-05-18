@@ -11,7 +11,7 @@ const Footer = () => {
                     <div>
                         <Link to="/" className="flex items-center mb-4 sm:mb-0">
                             <img src={logo} className="h-10 mr-3" alt="Logo" />
-                            <h2 className='text-gray-400 text-3xl font-bold'>Mini Wheeles</h2>
+                            <h2 className='text-red-500 text-3xl font-bold' style={{ fontFamily: 'Kalam, cursive' }}>Mini Wheeles</h2>
                         </Link>
                     </div>
                     <div className="mb-3">
