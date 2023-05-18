@@ -1,15 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import 'flowbite';
 import google from "../../assets/icons/google.svg";
 import logo from "../../assets/logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { PuffLoader } from "react-spinners";
 
 const Login = () => {
     const [errMsg, setErrMsg] = useState("");
     const [emailErrMsg, setEmailErrMsg] = useState("");
 
-    const { login, googleLogin } = useContext(AuthContext);
+    const { login, googleLogin, loading } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -25,6 +29,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 if (loggedUser) {
                     form.reset();
+                    navigate(from, { replace: true });
                 }
             })
             .catch(error => {
@@ -44,6 +49,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
@@ -53,8 +59,13 @@ const Login = () => {
     return (
         <section className="bg-gray-50 dark:bg-gray-900">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+
+                {
+                    loading && <PuffLoader color="#2563EB" />
+                }
+
                 <Link href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                    <img className="w-10 mr-2" src={logo} alt="logo" />
+                    <img className="w-10 mr-2 mt-5" src={logo} alt="logo" />
                     <h2 className='text-red-500 text-3xl font-bold' style={{ fontFamily: 'Kalam, cursive' }}>Mini Wheeles</h2>
                 </Link>
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
