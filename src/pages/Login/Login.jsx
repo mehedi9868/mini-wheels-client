@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import 'flowbite';
 import google from "../../assets/icons/google.svg";
 
 const Login = () => {

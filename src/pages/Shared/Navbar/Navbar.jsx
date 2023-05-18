@@ -4,7 +4,7 @@ import logo from "/logo.svg";
 import demo from "../../../assets/user.png";
 
 const Navbar = () => {
-    let user = null;
+    let user = true;
     return (
 
         <nav className="bg-[#262626] border border-gray-200 dark:bg-gray-900">
@@ -51,9 +51,26 @@ const Navbar = () => {
                         <li>
                             <NavLink to="/" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Home</NavLink>
                         </li>
+
                         <li>
-                            <NavLink to="/register" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Register</NavLink>
+                            <NavLink to="/all-toys" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">All Toys</NavLink>
                         </li>
+                        {/* conditional routes */}
+                        {user
+                            ?
+                            <>
+                                <li>
+                                    <NavLink to="/my-toys" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">My Toys</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/add-a-toy" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Add A Toy</NavLink>
+                                </li>
+                            </>
+                            :
+                            <li>
+                                <NavLink to="/register" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Register</NavLink>
+                            </li>
+                        }
                         <li>
                             <NavLink to="/blogs" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Blogs</NavLink>
                         </li>
