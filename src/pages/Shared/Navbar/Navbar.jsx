@@ -2,9 +2,18 @@ import 'flowbite';
 import { Link, NavLink } from 'react-router-dom';
 import logo from "../../../assets/logo.png";
 import demo from "../../../assets/user.png";
+import { useContext } from 'react';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Navbar = () => {
-    let user = { name: 'mehedi hasan', email: 'mehedi@gmail.com' };
+    const { user, logout } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logout()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     return (
 
         <nav className="bg-[#262626] border border-gray-200 dark:bg-blue-900">
@@ -23,7 +32,7 @@ const Navbar = () => {
                             :
                             <>
                                 <Link to="/login">
-                                    <button className='bg-blue-600 px-7 py-3 rounded-md mr-6 text-white hover:bg-blue-700'>Logout</button>
+                                    <button onClick={handleLogout} className='bg-blue-600 px-7 py-3 rounded-md mr-6 text-white hover:bg-blue-700'>Logout</button>
                                 </Link>
                                 <img className="w-12 h-12 rounded-full" title={user?.name} src={user ? demo : ''} alt="user photo" />
                             </>
