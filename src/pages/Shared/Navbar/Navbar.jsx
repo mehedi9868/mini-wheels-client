@@ -49,13 +49,13 @@ const Navbar = () => {
                 <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
                     <ul className="flex flex-col font-medium md:flex-row md:space-x-8 md:mt-0 md:border-0">
                         <li>
-                            <NavLink to="/" className="text-white px-6 py-3 rounded-md hover:bg-gray-500" aria-current="page">Home</NavLink>
+                            <NavLink to="/" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/register" className="text-white px-6 py-3 rounded-md hover:bg-gray-500" aria-current="page">Register</NavLink>
+                            <NavLink to="/register" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Register</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/blogs" className="text-white px-6 py-3 rounded-md hover:bg-gray-500" aria-current="page">Blogs</NavLink>
+                            <NavLink to="/blogs" className={({ isActive }) => isActive ? "text-white px-6 py-3 rounded-md bg-gray-500" : "text-white px-6 py-3 rounded-md hover:bg-gray-500"} aria-current="page">Blogs</NavLink>
                         </li>
 
                     </ul>
