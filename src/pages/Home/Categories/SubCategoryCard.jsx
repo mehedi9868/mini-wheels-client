@@ -1,19 +1,6 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const SubCategoryCard = ({ car }) => {
-
-    const { user } = useContext(AuthContext)
-    const navigate = useNavigate();
-
-    const handleViewDetails = (id) => {
-        if (!user) {
-            navigate("/login");
-        } else {
-            navigate(`/details/${id}`)
-        }
-    }
 
     return (
         <>
@@ -23,7 +10,9 @@ const SubCategoryCard = ({ car }) => {
                     <p className="font-bold">Name:</p>
                     <p className="font-bold">Price:</p>
                     <p className="font-bold">Rating:</p>
-                    <button onClick={() => handleViewDetails(car.id)} className="bg-blue-400 text-white px-6 py-3 mt-2 rounded-md hover:bg-blue-500">View Details</button>
+                    <Link to={`/details/${car.id}`}>
+                        <button className="bg-blue-400 text-white px-6 py-3 mt-2 rounded-md hover:bg-blue-500">View Details</button>
+                    </Link>
                 </div>
             </div>
             <hr />

@@ -8,6 +8,7 @@ import MyToys from "../pages/MyToys/MyToys";
 import AddAToy from "../pages/AddAToy/AddAToy";
 import Blogs from "../pages/Blogs/Blogs";
 import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
                 path: "/add-a-toy",
                 element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>,
             },
+            {
+                path: "/details/:id",
+                element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://restcountries.com/${params.id}`)
+            },
+
             {
                 path: "/blogs",
                 element: <Blogs></Blogs>,
