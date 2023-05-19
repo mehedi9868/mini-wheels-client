@@ -19,7 +19,7 @@ const AddAToy = () => {
         const description = form.description.value;
 
         const newToy = { name, picture, seller, email, category, price, rating, quantity, description };
-        fetch('http://localhost:5000/all-toys', {
+        fetch('https://mini-wheels-server.vercel.app/all-toys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
