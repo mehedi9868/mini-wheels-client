@@ -3,7 +3,7 @@ import ToyRow from "./ToyRow";
 
 const AllToys = () => {
 
-    const allToys = useLoaderData();
+    const allToys = useLoaderData(); // by default max 20 data
 
     return (
         <div className="mb-20">

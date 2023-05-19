@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: "/all-toys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch("https://mini-wheels-server.vercel.app/all-toys"),
+                loader: () => fetch("https://mini-wheels-server.vercel.app/all-toys?limit=20"),
             },
             {
                 path: "/my-toys",
