@@ -54,7 +54,7 @@ const Gallery = () => {
 
     return (
         <div className="flex flex-col items-center">
-            <h2 className="text-2xl font-bold text-red text-center my-20">Gallery Section</h2>
+            <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Gallery Section</h2>
             <div className="grid grid-cols-6 gap-4">
                 {
                     items.map(item => <ImageCard

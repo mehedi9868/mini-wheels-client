@@ -31,7 +31,7 @@ const Navbar = () => {
                             </Link>
                             :
                             <>
-                                <Link to="/login">
+                                <Link to="/">
                                     <button onClick={handleLogout} className='bg-blue-600 px-7 py-3 rounded-md mr-6 text-white hover:bg-blue-700'>Logout</button>
                                 </Link>
                                 <img className="w-12 h-12 rounded-full" title={user?.displayName} src={user && user.photoURL == null ? demo : user?.photoURL} alt="user photo" />
