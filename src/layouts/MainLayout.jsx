@@ -4,10 +4,12 @@ import Footer from '../pages/Shared/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='bg-[#F5F5F5]'>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <div className="flex-grow">
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };

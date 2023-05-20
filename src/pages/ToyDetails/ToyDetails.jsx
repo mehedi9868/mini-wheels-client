@@ -1,9 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import { useEffect, useRef } from "react";
 
 const ToyDetails = () => {
     const singleCar = useLoaderData();
     const { name, picture, seller, email, category, price, rating, quantity, description } = singleCar;
+    const modalCheckboxRef = useRef(null);
+
+    useEffect(() => {
+        modalCheckboxRef.current.checked = true;
+    }, []);
 
     // rating
     const renderRatingStars = () => {
@@ -21,9 +27,7 @@ const ToyDetails = () => {
 
     return (
         <div>
-            <label htmlFor="my-modal-6" className="btn">open modal</label>
-
-            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" ref={modalCheckboxRef} />
             <div className="modal sm:modal-middle">
                 <div className="modal-box p-0 rounded-md">
                     <img className="w-full h-auto" src={picture} alt="" />
