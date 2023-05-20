@@ -4,13 +4,16 @@ import logo from "../../../assets/logo.png";
 import demo from "../../../assets/user.png";
 import { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
 
     const handleLogout = () => {
         logout()
-            .then(() => { })
+            .then(() => {
+                toast("Logout Successful !")
+            })
             .catch(error => console.log(error))
     }
 

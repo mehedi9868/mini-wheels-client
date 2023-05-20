@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { PuffLoader } from "react-spinners";
 import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [errMsg, setErrMsg] = useState("");
@@ -30,6 +31,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 if (loggedUser) {
                     form.reset();
+                    toast("Login Successful !")
                     navigate(from, { replace: true });
                 }
             })
@@ -49,8 +51,10 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
-                navigate(from, { replace: true });
+                if (loggedUser) {
+                    toast("Login Successful !")
+                    navigate(from, { replace: true });
+                }
             })
             .catch(error => {
                 console.log(error);
