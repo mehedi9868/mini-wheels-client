@@ -8,7 +8,7 @@ const MyToys = () => {
 
     const { user } = useContext(AuthContext);
     //get by email
-    const url = `http://localhost:5000/toys-by-email?email=${user?.email}`;
+    const url = `https://mini-wheels-server.vercel.app/toys-by-email?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -28,7 +28,7 @@ const MyToys = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/all-toys/${id}`, {
+                fetch(`https://mini-wheels-server.vercel.app/all-toys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -58,7 +58,7 @@ const MyToys = () => {
     }
     return (
 
-        <div>
+        <div className="w-4/5 mx-auto">
             <div className="mb-20">
                 <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>My Toys</h2>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

@@ -30,7 +30,7 @@ const ToyDetails = () => {
             <input type="checkbox" id="my-modal-6" className="modal-toggle" ref={modalCheckboxRef} />
             <div className="modal sm:modal-middle">
                 <div className="modal-box p-0 rounded-md">
-                    <img className="w-full h-auto" src={picture} alt="" />
+                    <img className="w-full h-auto border" src={picture} alt="" />
                     <div className="p-4 italic">
                         <h2 className="text-xl font-bold text-red-500 my-2" style={{ fontFamily: 'Kalam, cursive' }}>{name}</h2>
 

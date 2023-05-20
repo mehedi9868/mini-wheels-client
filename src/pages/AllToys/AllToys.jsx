@@ -22,7 +22,7 @@ const AllToys = () => {
     }
 
     return (
-        <div className="mb-20">
+        <div className="mb-20 w-4/5 mx-auto">
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center mt-20" style={{ fontFamily: 'Kalam, cursive' }}>All Toys</h2>
             {/* search  */}
             <form onSubmit={handleSearch}>
