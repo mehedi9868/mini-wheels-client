@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Update = () => {
     const { user } = useContext(AuthContext)
@@ -47,6 +48,9 @@ const Update = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Mini Wheels | Update Details</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Update a Toy </h2>
 
             <form className="w-3/4 mx-auto mb-20" onSubmit={handleUpdate}>

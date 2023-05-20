@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import MyToyRow from "./MyToyRow";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
@@ -59,6 +60,9 @@ const MyToys = () => {
     return (
 
         <div className="w-4/5 mx-auto">
+            <Helmet>
+                <title>Mini Wheels | My Toys</title>
+            </Helmet>
             <div className="mb-20">
                 <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>My Toys</h2>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

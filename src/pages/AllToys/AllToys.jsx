@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ToyRow from "./ToyRow";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AllToys = () => {
     const allToys = useLoaderData(); // by default max 20 data
@@ -23,6 +24,9 @@ const AllToys = () => {
 
     return (
         <div className="mb-20 w-4/5 mx-auto">
+            <Helmet>
+                <title>Mini Wheels | All Toys</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center mt-20" style={{ fontFamily: 'Kalam, cursive' }}>All Toys</h2>
             {/* search  */}
             <form onSubmit={handleSearch}>

@@ -5,6 +5,7 @@ import logo from "../../assets/logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { PuffLoader } from "react-spinners";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const [errMsg, setErrMsg] = useState("");
@@ -58,6 +59,9 @@ const Login = () => {
 
     return (
         <section className="bg-gray-50 dark:bg-gray-900">
+            <Helmet>
+                <title>Mini Wheels | Login</title>
+            </Helmet>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 
                 {

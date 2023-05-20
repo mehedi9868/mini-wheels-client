@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddAToy = () => {
 
@@ -43,6 +44,9 @@ const AddAToy = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Mini Wheels | Add A Toy</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Add a Toy </h2>
 
             <form className="w-3/4 mx-auto mb-20" onSubmit={handleAdd}>

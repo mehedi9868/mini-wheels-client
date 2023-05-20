@@ -5,6 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import logo from "../../assets/logo.png";
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const [errMsg, setErrMsg] = useState("");
@@ -65,6 +66,9 @@ const Register = () => {
 
     return (
         <section className="bg-gray-50 dark:bg-gray-900">
+            <Helmet>
+                <title>Mini Wheels | Register</title>
+            </Helmet>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <Link to="/" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     <img className="w-10 mr-2" src={logo} alt="logo" />

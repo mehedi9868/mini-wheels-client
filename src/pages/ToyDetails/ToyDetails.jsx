@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet";
 
 const ToyDetails = () => {
     const singleCar = useLoaderData();
@@ -27,6 +28,9 @@ const ToyDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Mini Wheels | Toy Details</title>
+            </Helmet>
             <input type="checkbox" id="my-modal-6" className="modal-toggle" ref={modalCheckboxRef} />
             <div className="modal sm:modal-middle">
                 <div className="modal-box p-0 rounded-md">

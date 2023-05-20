@@ -1,8 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import { Helmet } from "react-helmet";
+
 const Blogs = () => {
     return (
         <div>
+            <Helmet>
+                <title>Mini Wheels | Blogs</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Blogs</h2>
 
             <div className='m-10 mt-0'>
