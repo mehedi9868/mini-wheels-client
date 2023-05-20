@@ -8,7 +8,7 @@ const Update = () => {
     const { _id, name, picture, category, price, rating, quantity, description } = useLoaderData();
     const navagate = useNavigate();
 
-    const handleAdd = (e) => {
+    const handleUpdate = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -49,7 +49,7 @@ const Update = () => {
         <div>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Update a Toy </h2>
 
-            <form className="w-3/4 mx-auto mb-20" onSubmit={handleAdd}>
+            <form className="w-3/4 mx-auto mb-20" onSubmit={handleUpdate}>
 
                 <div className="grid md:grid-cols-2 md:gap-6">
                     <div className="relative z-0 w-full mb-6 group">
