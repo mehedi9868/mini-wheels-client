@@ -9,6 +9,7 @@ import AddAToy from "../pages/AddAToy/AddAToy";
 import Blogs from "../pages/Blogs/Blogs";
 import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
+import Update from "../pages/Update/Update";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://mini-wheels-server.vercel.app/all-toys/${params.id}`),
+            },
+            {
+                path: "/update/:id",
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://mini-wheels-server.vercel.app/all-toys/${params.id}`),
             },
 
