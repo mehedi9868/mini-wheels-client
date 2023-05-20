@@ -10,6 +10,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import Update from "../pages/Update/Update";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
 
         ]
     },
+    {
+        path: "*",
+        element: <ErrorPage></ErrorPage>
+    }
 ]);
 
 export default router;
