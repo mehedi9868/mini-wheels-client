@@ -2,12 +2,29 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import SubCategoryCard from './SubCategoryCard';
 import { useEffect, useState } from 'react';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Categories = () => {
     const [sportCars, setSportCars] = useState([]);
     const [regularCars, setRegularCars] = useState([]);
     const [policeCars, setPoliceCars] = useState([]);
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            AOS.refresh();
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         fetch(`https://mini-wheels-server.vercel.app/searchByCategory/regularCar`)
@@ -23,7 +40,7 @@ const Categories = () => {
             .then(data => setPoliceCars(data));
     }, []);
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto' data-aos="fade-up" data-aos-delay="200">
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Shop by Category</h2>
             <Tabs>
                 <TabList>
