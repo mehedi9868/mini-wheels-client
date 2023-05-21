@@ -37,7 +37,7 @@ const Categories = () => {
                     <div className='flex flex-col gap-4'>
                         {
                             sportCars.map((car) => <SubCategoryCard
-                                key={car.id}
+                                key={car._id}
                                 car={car}
                             ></SubCategoryCard>)
                         }
@@ -49,7 +49,7 @@ const Categories = () => {
                     <div className='flex flex-col gap-4'>
                         {
                             regularCars.map((car) => <SubCategoryCard
-                                key={car.id}
+                                key={car._id}
                                 car={car}
                             ></SubCategoryCard>)
                         }
@@ -61,7 +61,7 @@ const Categories = () => {
                     <div className='flex flex-col gap-4'>
                         {
                             policeCars.map((car) => <SubCategoryCard
-                                key={car.id}
+                                key={car._id}
                                 car={car}
                             ></SubCategoryCard>)
                         }
