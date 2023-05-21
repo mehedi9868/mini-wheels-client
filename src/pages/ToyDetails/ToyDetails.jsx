@@ -48,7 +48,7 @@ const ToyDetails = () => {
                             <div>
                                 <p className="text-gray-600 mb-2">Available Quantity: <span className="font-semibold ">{quantity}</span></p>
                                 <p className="flex items-center gap-1 mb-2">Rating: {renderRatingStars()}</p>
-                                <p className="text-gray-600 mb-2">Price: <span className="font-semibold ">{price}</span></p>
+                                <p className="text-gray-600 mb-2">Price: $<span className="font-semibold ">{price}</span></p>
                             </div>
                         </div>
                         <p className="text-gray-800 text-justify">Description: {description}</p>

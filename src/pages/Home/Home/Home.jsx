@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
 import Gallery from "../Gallery/Gallery";
-import SectionOne from "../SectionOne/SectionOne";
 import SectionTwo from "../SectionTwo/SectionTwo";
+import DiscountedToys from "../DiscountedToys/DiscountedToys";
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <Categories></Categories>
-            <SectionOne></SectionOne>
+            <DiscountedToys></DiscountedToys>
             <SectionTwo></SectionTwo>
         </div>
     );

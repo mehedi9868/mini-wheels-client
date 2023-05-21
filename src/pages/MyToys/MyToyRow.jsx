@@ -14,7 +14,7 @@ const MyToyRow = ({ toy, handleDelete }) => {
                 {category}
             </td>
             <td className="px-6 py-4">
-                {price}
+                ${price}
             </td>
             <td className="px-6 py-4">
                 {quantity}

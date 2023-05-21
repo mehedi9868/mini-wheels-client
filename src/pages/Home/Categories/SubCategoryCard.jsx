@@ -26,7 +26,7 @@ const SubCategoryCard = ({ car }) => {
                 <img src={picture} alt="" className="w-full mb-4 md:w-[300px] md:h-[300px]" />
                 <div className="space-y-2">
                     <p className="font-bold">Name: {name}</p>
-                    <p className="font-bold">Price: {price}</p>
+                    <p className="font-bold">Price: ${price}</p>
                     <p className="font-bold">Rating: {rating}</p>
                     <Link to={`/details/${_id}`}>
                         <button onClick={handleViewDetails} className="bg-blue-400 text-white px-6 py-3 mt-2 rounded-md hover:bg-blue-500">View Details</button>
