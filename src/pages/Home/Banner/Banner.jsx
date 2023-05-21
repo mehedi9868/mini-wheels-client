@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
             <img src={banner} alt="Car Toys Banner"
-                className="w-full"
+                className="w-full brightness-[.7]"
             />
         </div>
     );
