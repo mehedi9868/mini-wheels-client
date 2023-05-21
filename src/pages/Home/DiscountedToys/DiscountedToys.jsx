@@ -29,7 +29,7 @@ const DiscountedToys = () => {
     }, []);
 
     return (
-        <div className='w-3/4 mx-auto'>
+        <div className='w-full md:w-3/4 mx-auto'>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Discounted Toys</h2>
             <div className='grid md:grid-cols-2 gap-4' data-aos="fade-up" data-aos-delay="200">
                 {

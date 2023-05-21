@@ -23,7 +23,7 @@ const SubCategoryCard = ({ car }) => {
     return (
         <>
             <div className="mx-auto md:mx-0 md:flex gap-4 items-center px-6 py-2">
-                <img src={picture} alt="" className="w-full mb-4 md:w-[300px] md:h-[300px]" />
+                <img src={picture} alt="" className="w-full mb-4 md:w-[300px] md:h-[300px] rounded" />
                 <div className="space-y-2">
                     <p className="font-bold">Name: {name}</p>
                     <p className="font-bold">Price: ${price}</p>
