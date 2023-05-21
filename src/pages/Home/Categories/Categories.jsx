@@ -34,7 +34,7 @@ const Categories = () => {
 
                 {/* tab one */}
                 <TabPanel>
-                    <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col md:flex-row gap-4'>
                         {
                             sportCars.map((car) => <SubCategoryCard
                                 key={car._id}
@@ -46,7 +46,7 @@ const Categories = () => {
 
                 {/* tab two */}
                 <TabPanel>
-                    <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col md:flex-row gap-4'>
                         {
                             regularCars.map((car) => <SubCategoryCard
                                 key={car._id}
@@ -58,7 +58,7 @@ const Categories = () => {
 
                 {/* tab three */}
                 <TabPanel>
-                    <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col md:flex-row gap-4'>
                         {
                             policeCars.map((car) => <SubCategoryCard
                                 key={car._id}
