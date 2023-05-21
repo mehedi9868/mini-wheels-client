@@ -1,26 +1,29 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import SubCategoryCard from './SubCategoryCard';
+import { useEffect, useState } from 'react';
 
 
 const Categories = () => {
+    const [sportCars, setSportCars] = useState([]);
+    const [regularCars, setRegularCars] = useState([]);
+    const [policeCars, setPoliceCars] = useState([]);
 
-    const cars = [
-        {
-            id: 1,
-            img: 'https://example.com/image1.jpg',
-        },
-        {
-            id: 2,
-            img: 'https://example.com/image2.jpg',
-        },
-        {
-            id: 3,
-            img: 'https://example.com/image3.jpg',
-        },
-    ];
+    useEffect(() => {
+        fetch(`https://mini-wheels-server.vercel.app/searchByCategory/regularCar`)
+            .then(res => res.json())
+            .then(data => setRegularCars(data));
+
+        fetch(`https://mini-wheels-server.vercel.app/searchByCategory/sportsCar`)
+            .then(res => res.json())
+            .then(data => setSportCars(data));
+
+        fetch(`https://mini-wheels-server.vercel.app/searchByCategory/policeCar`)
+            .then(res => res.json())
+            .then(data => setPoliceCars(data));
+    }, []);
     return (
-        <div>
+        <div className='w-11/12 mx-auto'>
             <h2 className="text-2xl font-bold text-red-500 underline underline-offset-8 text-center my-20" style={{ fontFamily: 'Kalam, cursive' }}>Shop by Category</h2>
             <Tabs>
                 <TabList>
@@ -33,7 +36,7 @@ const Categories = () => {
                 <TabPanel>
                     <div className='flex flex-col gap-4'>
                         {
-                            cars.map((car) => <SubCategoryCard
+                            sportCars.map((car) => <SubCategoryCard
                                 key={car.id}
                                 car={car}
                             ></SubCategoryCard>)
@@ -45,7 +48,7 @@ const Categories = () => {
                 <TabPanel>
                     <div className='flex flex-col gap-4'>
                         {
-                            cars.map((car) => <SubCategoryCard
+                            regularCars.map((car) => <SubCategoryCard
                                 key={car.id}
                                 car={car}
                             ></SubCategoryCard>)
@@ -57,7 +60,7 @@ const Categories = () => {
                 <TabPanel>
                     <div className='flex flex-col gap-4'>
                         {
-                            cars.map((car) => <SubCategoryCard
+                            policeCars.map((car) => <SubCategoryCard
                                 key={car.id}
                                 car={car}
                             ></SubCategoryCard>)
